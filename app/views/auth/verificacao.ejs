@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Código</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/verificacao.css">
+</head>
+<body>
+    <header class="main-header desktop-header">
+        <section class="header-container">
+            <article class="brand-wrapper">
+                <a href="/" class="brand-link" aria-label="Página inicial">
+                    <img src="/images/logotipo.png" alt="Logotipo Hydria" class="logo-img">
+                    <span class="brand-text">HYDRIA</span>
+                </a>
+            </article>
+
+            <nav class="main-navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/sobre">SOBRE</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+
+            <aside class="actions-wrapper">
+                <nav class="accessibility-controls" aria-label="Controles de acessibilidade">
+                    <button type="button" id="decrease-font" aria-label="Diminuir tamanho do texto">
+                        <img src="/images/A-acessibilidade.png" alt="Ícone diminuir fonte">
+                    </button>
+                    <button type="button" id="increase-font" aria-label="Aumentar tamanho do texto">
+                        <img src="/images/A+acessibilidade.png" alt="Ícone aumentar fonte">
+                    </button>
+                    <button type="button" id="toggle-contrast" aria-label="Alternar alto contraste">
+                        <img src="/images/contrasteacessibilidade.png" alt="Ícone alto contraste">
+                    </button>
+                </nav>
+
+                <nav class="auth-navigation" aria-label="Autenticação de usuário">
+                    <a href="/login" class="btn-login">LOGIN</a>
+                    <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
+                </nav>
+            </aside>
+        </section>
+    </header>
+<main class="verificacao-desktop">
+        <aside class="background-decor" aria-hidden="true">
+            <figure class="shape-blue"></figure>
+            <figure class="shape-orange"></figure>
+        </aside>
+
+        <section class="verificacao-area">
+            <article class="verificacao-card">
+                <header>
+                    <h1>Código de Verificação</h1>
+                    <p>Escreva o código que enviamos para você</p>
+                </header>
+
+                <form action="/auth/verificacao" method="POST" id="form-verificacao-desktop" novalidate>
+                    <fieldset class="otp-group">
+                        <legend class="sr-only">Insira o código de 4 dígitos</legend>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 1" required>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 2" required>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 3" required>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 4" required>
+                    </fieldset>
+
+                    <p class="resend-info">
+                        Você não recebeu nenhum código? <a href="#">Reenviar código</a>
+                    </p>
+
+                        <button type="submit" class="btn-verificar">Verificar</button>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <main class="verificacao-mobile">
+        <aside class="decor-top" aria-hidden="true">
+            <figure class="shape-blue-top"></figure>
+            <figure class="shape-orange-top"></figure>
+        </aside>
+
+        <aside class="decor-bottom" aria-hidden="true">
+            <figure class="shape-blue-bottom"></figure>
+            <figure class="shape-orange-bottom"></figure>
+        </aside>
+
+        <section class="verificacao-mobile-content">
+            <article class="verificacao-card">
+                <header>
+                    <h1>Código de Verificação</h1>
+                    <p>Escreva o código que enviamos para você</p>
+                </header>
+
+                <form action="/auth/verificacao" method="POST" id="form-verificacao-mobile" novalidate>
+                    <fieldset class="otp-group">
+                        <legend class="sr-only">Insira o código de 4 dígitos</legend>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 1" required>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 2" required>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 3" required>
+                        <input type="text" maxlength="1" pattern="\d*" inputmode="numeric" aria-label="Dígito 4" required>
+                    </fieldset>
+
+                    <p class="resend-info">
+                        Você não recebeu nenhum código? <a href="#">Reenviar código</a>
+                    </p>
+
+                    <footer>
+                        <button type="submit" class="btn-verificar">Verificar</button>
+                    </footer>
+                </form>
+            </article>
+        </section>
+    </main>
+
+    <nav class="mobile-navigation" aria-label="Navegação inferior">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="/projetos">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    <span>Projetos</span>
+                </a>
+            </li>
+            <li class="search-highlight">
+                <a href="/" aria-label="Pesquisar">
+                    <span class="search-bg">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/contato">
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+            <li>
+                <a href="/sobre">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Sobre</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const forms = [
+            document.getElementById('form-verificacao-desktop'),
+            document.getElementById('form-verificacao-mobile')
+        ].filter(Boolean);
+
+        forms.forEach((form) => {
+            const otpInputs = form.querySelectorAll('input');
+
+            otpInputs.forEach((input, index) => {
+                input.addEventListener('input', (e) => {
+                    const value = e.target.value;
+
+                    if (!/^\d*$/.test(value)) {
+                        e.target.value = '';
+                        return;
+                    }
+
+                    if (value.length === 1 && index < otpInputs.length - 1) {
+                        otpInputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                        otpInputs[index - 1].focus();
+                    }
+                });
+            });
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                window.location.href = '/auth/nova-senha';
+            });
+        });
+    </script>
+        <script src="/js/auto-fix.js"></script>
+    <footer class="site-footer">
+        <section class="footer-inner-container">
+            
+            <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
+                <ul>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/quem-somos">Quem somos?</a></li>
+                    <li><a href="/projetos">Projetos</a></li>
+                    <li class="auth-stacked-item">
+                        <a href="/cadastro" class="main-auth-link">Cadastro</a>
+                        <a href="/login" class="sub-auth-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <article class="footer-identity-block">
+                <figure class="brand-footer-wrapper">
+                    <img src="/images/logotipo.png" alt="Logotipo Hydria">
+                    <figcaption>HYDRIA</figcaption>
+                </figure>
+                
+                <nav class="footer-social-media" aria-label="Redes sociais corporativas">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </nav>
+            </article>
+
+        </section>
+    </footer>
+
+</body>
+</html>

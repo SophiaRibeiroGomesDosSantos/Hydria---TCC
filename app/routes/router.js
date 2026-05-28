@@ -1,90 +1,176 @@
-var express = require('express');
-var router = express.Router(); 
-const {body, validationResult} = require("express-validator")
-var {validarTelefone, validarDoacao} = require("../helpers/validacoes");
-const { render, name } = require('ejs');
+const express = require('express');
+const path = require('path');
+const router = express.Router();
 
-router.get('/', function(req, res) {
-    res.render('pages/index')
-})
+// Página inicial
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/index.html'));
+});
 
-router.get('/sobre', function (req, res) {
-    res.render('pages/sobre')
-})
+// Home alternativa
+router.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/index.html'));
+});
 
-router.get('/doacao', function (req, res) {
-    res.render('pages/doacao')
-})
+// Sobre
+router.get('/sobre', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/sobre.html'));
+});
 
-router.get('/contato', function (req, res) {
-    res.render('pages/contato')
-})
+// Projetos
+router.get('/projetos', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/projetos.html'));
+});
 
-router.get('/login', function(req, res) {
-    res.render('pages/login')
-})
+// Sobre Instituto Agua Viva
+router.get('/sobreInstitutoAguaViva', (req, res) => {
+    res.render('pages/sobreInstitutoAguaViva');
+});
 
-router.get('/noticia01', function(req, res) {
-    res.render('pages/noticia01')
-})
+router.get('/sobre-instituto-agua-viva', (req, res) => {
+    res.render('pages/sobreInstitutoAguaViva');
+});
 
-router.get('/noticia02', function(req, res) {
-    res.render('pages/noticia02')
-})
+router.get('/sobreinstitutoaguaviva', (req, res) => {
+    res.render('pages/sobreInstitutoAguaViva');
+});
 
-router.get('/noticia03', function(req, res) {
-    res.render('pages/noticia03')
-})
+// Sobre Águas Potiguara
+router.get('/sobre-aguas-potiguara', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/sobreAguasPotiguara.html'));
+});
 
-router.get('/noticia04', function(req, res) {
-    res.render('pages/noticia04')
-})
+// Sobre Um Milhão de Cisternas
+router.get('/sobre-um-milhao-de-cisternas', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/sobreUmMilhaoDeCisternas.html'));
+});
 
-router.get('/noticia05', function(req, res) {
-    res.render('pages/noticia05')
-})
+// Contato
+router.get('/contato', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/contato.html'));
+});
 
-router.get('/noticia06', function(req, res) {
-    res.render('pages/noticia06')
-})
+// Mensagem enviada
+router.get('/mensagem-enviada', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/mensagemEnviada.html'));
+});
 
-router.get('/ranking25', function(req, res) {
-    res.render('pages/ranking25')
-})
-
-router.get('/ranking24', function(req, res) {
-    res.render('pages/ranking24')
-})
-
-router.get('/ranking23', function(req, res) {
-    res.render('pages/ranking23')
-})
-
-router.get('/ranking22', function(req, res) {
-    res.render('pages/ranking22')
-})
-
-router.get('/ranking21', function(req, res) {
-    res.render('pages/ranking21')
-})
-
-router.get('/ranking20', function(req, res) {
-    res.render('pages/ranking20')
-})
-
-router.get('/enviocont', function(req, res) {
-    res.render('pages/enviocont')
-})
-
-router.get('/enviodoa', function(req, res) {
-    res.render('pages/enviodoa')
-})
-
-router.get('/enviocad', function(req, res) {
-    res.render('pages/enviocad')
-})
+router.get('/mensagemEnviada', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/mensagemEnviada.html'));
+});
 
 
+// Doações
+router.get('/doacoes', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/doações.html'));
+});
+
+// Doações (rota alternativa)
+router.get('/doações', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/doações.html'));
+});
+
+// Selecionar valor da doação
+router.get('/selecionar-valor', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/selecionar-valor.html'));
+});
+
+router.get('/selecionar-valor-doacao', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/selecionar-valor.html'));
+});
+
+// Forma de pagamento
+router.get('/pagamento', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/pagamento.html'));
+});
+
+router.get('/forma-pagamento', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/pagamento.html'));
+});
+
+// Pagamento via Pix
+router.get('/dopagamentoviapix', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/dopagamentoviapix.html'));
+});
+
+router.get('/pagamento-via-pix', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/dopagamentoviapix.html'));
+});
+
+// Pagamento via Cartão de Crédito
+router.get('/pagamentoCartaodeCredito', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/pagamentoCartaodeCredito.html'));
+});
+
+router.get('/pagamento-cartaodecredito', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/pagamentoCartaodeCredito.html'));
+});
+
+
+
+// Perfil
+router.get('/perfil', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/editar-perfil.html'));
+});
+
+// Editar perfil (rota alternativa)
+router.get('/editar-perfil', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/editar-perfil.html'));
+});
+
+// Editar perfil (rota com prefixo /auth)
+router.get('/auth/editar-perfil', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/editar-perfil.html'));
+});
+
+// Mensagem aceita
+router.get('/mensagem-aceita', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/mensagem-aceita.html'));
+});
+
+// Agradecimento da doação
+router.get('/agradecimento-doacao', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/agradecimento-doacao.html'));
+});
+
+// Login (rota direta)
+router.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/auth/login.html'));
+});
+
+// Barra doação
+
+
+// Perfil admin (na pasta pages)
+router.get('/perfil-admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/perfiladm.html'));
+});
+ 
+
+// Notícias
+router.get('/noticia01', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/noticia01.html'));
+});
+
+router.get('/noticia02', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/noticia02.html'));
+});
+
+router.get('/noticia03', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/noticia03.html'));
+});
+
+router.get('/noticia04', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/noticia04.html'));
+});
+
+router.get('/noticia05', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/noticia05.html'));
+});
+
+router.get('/noticia06', (req, res) => {
+    res.sendFile(path.join(__dirname, '../vistas/pages/noticia06.html'));
+});
 
 //login
 let login = []
@@ -285,6 +371,5 @@ router.post('/msg',
 
     }
 );
-
 
 module.exports = router;

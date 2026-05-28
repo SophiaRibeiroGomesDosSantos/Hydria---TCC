@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400"
+    />
+    <link rel="stylesheet" href="..\css\usuarios-adm.css" />
+    <title>Hydria-ADM</title>
+  </head>
+  <body>
+    <%- include("../partial/header-adm") %>
+
+    <main>
+
+            <h1 class="tittle">USUÁRIO</h1>
+            <p class="content-not">Gerencie usuários registrados, visualize perfis e exporte dados</p>
+        
+            <section class="user-list-section">
+                <span class="table-container">
+                    <table class="data-table users-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>EMAIL</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(usuarios && usuarios.length > 0) { %>
+                            <% usuarios.forEach(usuario => { %>
+                                <input type="hidden" name="id" id="id" value="<%= usuario.idUsuario %>">
+                                <form action="manter-usuario">
+                                    <tr>
+                                        <td><%= usuario.idUsuario %></td>
+                                        <td><%= usuario.nome %></td>
+                                        <td><%= usuario.email %></td>
+                                        <td><a href="/adm/deletar-logico?id=<%= usuario.idUsuario %>" class="btn-02">excluir</a></td>
+                                    </tr>    
+                                </form>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    </span>
+                </section>
+                
+                <button class="btn-01">Exportar em CSV</button>
+            <% } else { %>
+                <p class="topic-tittle">Nenhum usuário encontrado.</p>
+    <% } %>
+    </main>
+    <%- include("../partial/footer") %> 
+</body>
+</html>

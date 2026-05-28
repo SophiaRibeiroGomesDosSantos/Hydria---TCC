@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Definir Nova Senha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/novasenha.css">
+</head>
+<body>
+    <header class="main-header desktop-header">
+        <section class="header-container">
+            <article class="brand-wrapper">
+                <a href="/" class="brand-link" aria-label="Página inicial">
+                    <img src="/images/logotipo.png" alt="Logotipo Hydria" class="logo-img">
+                    <span class="brand-text">HYDRIA</span>
+                </a>
+            </article>
+
+            <nav class="main-navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/sobre">SOBRE</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+
+            <aside class="actions-wrapper">
+                <nav class="accessibility-controls" aria-label="Controles de acessibilidade">
+                    <button type="button" id="decrease-font" aria-label="Diminuir tamanho do texto">
+                        <img src="/images/A-acessibilidade.png" alt="Ícone diminuir fonte">
+                    </button>
+                    <button type="button" id="increase-font" aria-label="Aumentar tamanho do texto">
+                        <img src="/images/A+acessibilidade.png" alt="Ícone aumentar fonte">
+                    </button>
+                    <button type="button" id="toggle-contrast" aria-label="Alternar alto contraste">
+                        <img src="/images/contrasteacessibilidade.png" alt="Ícone alto contraste">
+                    </button>
+                </nav>
+
+                <nav class="auth-navigation" aria-label="Autenticação de usuário">
+                    <a href="/login" class="btn-login">LOGIN</a>
+                    <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
+                </nav>
+            </aside>
+        </section>
+    </header>
+<main class="nova-senha-desktop">
+        <section class="content-area">
+            <article class="password-card">
+                <header>
+                    <h1>Nova Senha</h1>
+                    <p class="subtitle">Estamos quase lá. Só mais um pouco!</p>
+                </header>
+
+                <form action="#" method="POST" id="form-nova-senha">
+                    <p class="field-wrapper">
+                        <label for="new-password" class="sr-only">Digite sua nova senha</label>
+                        <input type="password" id="new-password" name="new-password" placeholder="Digite sua nova senha..." required>
+                    </p>
+
+                    <ul class="validation-list">
+                        <li>Deve ter, no mínimo, 6 caracteres</li>
+                        <li>Deve incluir letras maiúsculas e minúsculas (a-z e A-Z)</li>
+                        <li>Deve incluir um número (0-9)</li>
+                        <li>Deve incluir um caractere especial (!, @, #, %, etc.)</li>
+                    </ul>
+
+                    <p class="field-wrapper">
+                        <label for="confirm-password" class="sr-only">Confirme sua nova senha</label>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua nova senha..." required>
+                    </p>
+
+                        <button type="submit" class="btn-confirmar">Confirmar</button>
+                </form>
+            </article>
+        </section>
+
+        <aside class="background-decor" aria-hidden="true">
+            <figure class="shape-blue"></figure>
+            <figure class="shape-orange"></figure>
+        </aside>
+    </main>
+
+    <main class="nova-senha-mobile-page">
+        <aside class="decor-top" aria-hidden="true">
+            <figure class="shape-blue-top"></figure>
+            <figure class="shape-orange-top"></figure>
+        </aside>
+
+        <section class="content-container">
+            <header>
+                <h1>Nova Senha</h1>
+                <p class="subtitle">Estamos quase lá. Só mais um pouco!</p>
+            </header>
+
+            <form action="#" method="POST" class="password-validation-form" id="form-nova-senha-mobile">
+                <p class="field-wrapper">
+                    <label for="new-password-mobile" class="sr-only">Digite sua nova senha</label>
+                    <input type="password" id="new-password-mobile" name="new-password-mobile" placeholder="Digite sua nova senha..." required>
+                </p>
+
+                <ul class="validation-requirements" aria-label="Requisitos da senha">
+                    <li>Deve ter, no mínimo, 6 caracteres</li>
+                    <li>Deve incluir letras maiúsculas e minúsculas (a-z e A-Z)</li>
+                    <li>Deve incluir um número (0-9)</li>
+                    <li>Deve incluir um caractere especial (!, @, #, %, etc.)</li>
+                </ul>
+
+                <p class="field-wrapper">
+                    <label for="confirm-password-mobile" class="sr-only">Confirme sua nova senha</label>
+                    <input type="password" id="confirm-password-mobile" name="confirm-password-mobile" placeholder="Confirme sua nova senha..." required>
+                </p>
+
+                <button type="submit" class="btn-confirmar">Confirmar</button>
+            </form>
+        </section>
+
+        <aside class="decor-bottom" aria-hidden="true">
+            <figure class="shape-blue-bottom"></figure>
+            <figure class="shape-orange-bottom"></figure>
+        </aside>
+    </main>
+
+    <nav class="mobile-navigation" aria-label="Navegação inferior">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="/projetos">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    <span>Projetos</span>
+                </a>
+            </li>
+            <li class="search-highlight">
+                <a href="/" aria-label="Pesquisar">
+                    <span class="search-bg">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="/contato">
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+            <li>
+                <a href="/sobre">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Sobre</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const forms = [
+            document.getElementById('form-nova-senha'),
+            document.getElementById('form-nova-senha-mobile')
+        ].filter(Boolean);
+
+        forms.forEach((form) => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const isMobile = form.id === 'form-nova-senha-mobile';
+                const newPassword = document.getElementById(isMobile ? 'new-password-mobile' : 'new-password').value;
+                const confirmPassword = document.getElementById(isMobile ? 'confirm-password-mobile' : 'confirm-password').value;
+
+                if (newPassword === confirmPassword && newPassword.length > 0) {
+                    alert('Senha alterada com sucesso!');
+                    window.location.href = '/login';
+                } else {
+                    alert('As senhas não coincidem ou estão vazias.');
+                }
+            });
+        });
+    </script>
+        <script src="/js/auto-fix.js"></script>
+    <footer class="site-footer">
+        <section class="footer-inner-container">
+            
+            <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
+                <ul>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/quem-somos">Quem somos?</a></li>
+                    <li><a href="/projetos">Projetos</a></li>
+                    <li class="auth-stacked-item">
+                        <a href="/cadastro" class="main-auth-link">Cadastro</a>
+                        <a href="/login" class="sub-auth-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <article class="footer-identity-block">
+                <figure class="brand-footer-wrapper">
+                    <img src="/images/logotipo.png" alt="Logotipo Hydria">
+                    <figcaption>HYDRIA</figcaption>
+                </figure>
+                
+                <nav class="footer-social-media" aria-label="Redes sociais corporativas">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </nav>
+            </article>
+
+        </section>
+    </footer>
+
+</body>
+</html>

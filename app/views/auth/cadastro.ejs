@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
+<body>
+    <header class="main-header desktop-header">
+        <section class="header-container">
+            <article class="brand-wrapper">
+                <a href="/" class="brand-link" aria-label="Página inicial">
+                    <img src="/images/logotipo.png" alt="Logotipo Hydria" class="logo-img">
+                    <span class="brand-text">HYDRIA</span>
+                </a>
+            </article>
+
+            <nav class="main-navigation" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="/projetos">PROJETOS</a></li>
+                    <li><a href="/sobre">SOBRE</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+
+            <aside class="actions-wrapper">
+                <nav class="accessibility-controls" aria-label="Controles de acessibilidade">
+                    <button type="button" id="decrease-font" aria-label="Diminuir tamanho do texto">
+                        <img src="/images/A-acessibilidade.png" alt="Ícone diminuir fonte">
+                    </button>
+                    <button type="button" id="increase-font" aria-label="Aumentar tamanho do texto">
+                        <img src="/images/A+acessibilidade.png" alt="Ícone aumentar fonte">
+                    </button>
+                    <button type="button" id="toggle-contrast" aria-label="Alternar alto contraste">
+                        <img src="/images/contrasteacessibilidade.png" alt="Ícone alto contraste">
+                    </button>
+                </nav>
+
+                <nav class="auth-navigation" aria-label="Autenticação de usuário">
+                    <a href="/login" class="btn-login">LOGIN</a>
+                    <a href="/auth/cadastro" class="btn-cadastro">CADASTRO</a>
+                </nav>
+            </aside>
+        </section>
+    </header>
+<main class="cadastro-desktop">
+        <aside class="background-decor" aria-hidden="true">
+            <figure class="shape-blue"></figure>
+            <figure class="shape-orange"></figure>
+        </aside>
+
+        <section class="cadastro-area">
+            <article class="cadastro-card">
+                <header>
+                    <h1>CADASTRO</h1>
+                </header>
+
+                <form action="#" method="POST" id="form-cadastro">
+                    <p class="field">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </p>
+
+                    <p class="field">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+
+                    <p class="field">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </p>
+
+                    <p class="field">
+                        <label for="confirme-senha">Confirme Senha</label>
+                        <input type="password" id="confirme-senha" name="confirme-senha" required>
+                    </p>
+
+                    <button type="submit" class="btn-entrar">ENTRAR</button>
+                </form>
+                <p class="login-text">
+                    Já tem uma conta? <a href="/login">Login</a>
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <main class="cadastro-mobile">
+        <section class="cadastro-hero">
+            <header>
+                <h1>CADASTRO</h1>
+            </header>
+
+            <form action="#" method="POST" class="form-cadastro" id="form-registro" novalidate>
+                <p class="field-wrapper">
+                    <label for="nome-mobile">Nome</label>
+                    <input type="text" id="nome-mobile" name="nome" placeholder="Insira seu nome completo..." required>
+                </p>
+
+                <p class="field-wrapper">
+                    <label for="email-mobile">E-mail</label>
+                    <input type="email" id="email-mobile" name="email" placeholder="Insira seu email..." required>
+                </p>
+
+                <p class="field-wrapper">
+                    <label for="senha-mobile">Senha</label>
+                    <input type="password" id="senha-mobile" name="senha" placeholder="Digite sua senha..." required>
+                </p>
+
+                <p class="field-wrapper">
+                    <label for="confirme-senha-mobile">Confirme Senha</label>
+                    <input type="password" id="confirme-senha-mobile" name="confirme-senha" placeholder="Confirme sua senha..." required>
+                </p>
+            </form>
+        </section>
+
+        <section class="cadastro-actions">
+            <footer>
+                <button type="submit" form="form-registro" class="btn-entrar">Cadastrar</button>
+                <p class="login-text">
+                    Já tem uma conta? <a href="/login">Login</a>
+                </p>
+            </footer>
+        </section>
+    </main>
+
+    <nav class="mobile-navigation" aria-label="Navegação inferior">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <span>Início</span>
+                </a>
+            </li>
+            <li>
+                <a href="/projetos">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    <span>Projetos</span>
+                </a>
+            </li>
+            <li>
+                <a href="/contato">
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                    <span>Contato</span>
+                </a>
+            </li>
+            <li>
+                <a href="/sobre">
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                    <span>Sobre</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('form-cadastro') || document.getElementById('form-registro');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+            const nomeRegex = /^\p{L}+(?:\s+\p{L}+)*$/u;
+
+            if (!form) return;
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const nomeInput = form.querySelector('input[name="nome"]');
+                const emailInput = form.querySelector('input[name="email"]');
+                const senhaInput = form.querySelector('input[name="senha"]');
+                const confirmeSenhaInput = form.querySelector('input[name="confirme-senha"]');
+                const nome = nomeInput.value.trim();
+                const email = emailInput.value.trim();
+                const senha = senhaInput.value.trim();
+                const confirmeSenha = confirmeSenhaInput.value.trim();
+
+                if (!nome || !email || !senha || !confirmeSenha) {
+                    alert('Preencha todos os campos antes de continuar.');
+                    return;
+                }
+
+                if (!nomeRegex.test(nome)) {
+                    alert('Digite um nome válido.');
+                    nomeInput.focus();
+                    return;
+                }
+
+                if (!emailRegex.test(email)) {
+                    alert('Digite um email válido.');
+                    emailInput.focus();
+                    return;
+                }
+
+                if (senha.length < 6) {
+                    alert('A senha deve ter pelo menos 6 caracteres.');
+                    senhaInput.focus();
+                    return;
+                }
+
+                if (senha !== confirmeSenha) {
+                    alert('As senhas não coincidem.');
+                    confirmeSenhaInput.focus();
+                    return;
+                }
+
+                window.location.href = '/mensagem-aceita';
+            });
+        });
+    </script>
+        <script src="/js/auto-fix.js"></script>
+    <footer class="site-footer">
+        <section class="footer-inner-container">
+            
+            <nav class="footer-links-nav" aria-label="Navegação secundária do rodapé">
+                <ul>
+                    <li><a href="/contato">Contato</a></li>
+                    <li><a href="/quem-somos">Quem somos?</a></li>
+                    <li><a href="/projetos">Projetos</a></li>
+                    <li class="auth-stacked-item">
+                        <a href="/cadastro" class="main-auth-link">Cadastro</a>
+                        <a href="/login" class="sub-auth-link">Login</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <article class="footer-identity-block">
+                <figure class="brand-footer-wrapper">
+                    <img src="/images/logotipo.png" alt="Logotipo Hydria">
+                    <figcaption>HYDRIA</figcaption>
+                </figure>
+                
+                <nav class="footer-social-media" aria-label="Redes sociais corporativas">
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </nav>
+            </article>
+
+        </section>
+    </footer>
+
+</body>
+</html>
